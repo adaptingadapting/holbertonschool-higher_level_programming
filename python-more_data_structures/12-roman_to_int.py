@@ -1,18 +1,16 @@
 #!/usr/bin/python3
 
 
-def roman_to_int(roman_string):
+def roman_to_int(string):
+    if type(string) != str or not string:
+        return 0
+    dicto = {"I": 1, "V": 5, "X": 10,
+             "L": 50, "C": 100, "D": 500, "M": 1000}
     result = 0
-    roman_dict = {"X": 10, "V": 5, "D": 500, "C": 100,
-                  "I": 1, "L": 50, "M": 100}
-    for i in range(1, len(roman_string)):
-        if roman_dict[roman_string[-i]] > roman_dict[roman_string[-i - 1]]:
-            result += roman_dict[roman_string[-i]]\
-                - roman_dict[roman_string[-i - 1]]
-            i += 1
+    for i in range(len(string)):
+        if i > 0 and dicto[string[i]] > dicto[string[i - 1]]:
+            result += dicto[string[i]]
+            result -= dicto[string[i - 1]] * 2
         else:
-            result += roman_dict[roman_string[-i]]
-    if len(roman_string) == 1 or\
-       roman_dict[roman_string[1]] < roman_dict[roman_string[0]]:
-        result += roman_dict[roman_string[0]]
+            result += dicto[string[i]]
     return result
