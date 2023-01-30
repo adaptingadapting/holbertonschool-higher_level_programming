@@ -40,7 +40,6 @@ class Square:
 
     def my_print(self):
         if not self.__size:
-            print()
             return
         for h in range(self.__position[1]):
             print()
