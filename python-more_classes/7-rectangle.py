@@ -52,7 +52,7 @@ class Rectangle:
         new_string = ""
         for i in range(self.__height):
             for j in range(self.__width):
-                new_string += self.print_symbol
+                new_string += str(self.print_symbol)
             if i < self.__height - 1:
                 new_string += "\n"
         return new_string
