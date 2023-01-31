@@ -4,6 +4,7 @@
 
 
 def text_indentation(text):
+    """ puts newlines and takes out trailing whitespace off text """
     if not type(text) == str:
         raise TypeError("text must be a string")
     start_string = ""
