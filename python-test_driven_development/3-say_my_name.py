@@ -2,8 +2,10 @@
 
 """ Module that prints your name """
 
+
 def say_my_name(first_name, last_name=""):
-    if type(first_name) != str or first_name == None:
+    """ module that prints both names """
+    if type(first_name) != str or first_name is None:
         raise TypeError("first_name must be a string")
     if type(last_name) != str:
         raise TypeError("last_name must be a string")
