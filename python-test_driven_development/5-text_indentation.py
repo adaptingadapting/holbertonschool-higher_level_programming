@@ -8,7 +8,7 @@ def text_indentation(text):
     if not type(text) == str:
         raise TypeError("text must be a string")
     start_string = ""
-    flag = 0
+    flag = 1
     for char in text:
         if not flag:
             start_string += char

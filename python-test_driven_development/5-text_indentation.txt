@@ -1,29 +1,28 @@
-	>>> text_indent = __import__('5-text_indentation').text_indentation
-	>>> string = "hola"
-	>>> text_indent(string)
-	hola
+>>> text_indent = __import__('5-text_indentation').text_indentation
+>>> string = "hola"
+>>> text_indent(string)
+hola
 
-	>>> string = None
-	>>> text_indent(string)
-	Traceback (most recent call last):
-	TypeError: text must be a string
+>>> string = None
+>>> text_indent(string)
+Traceback (most recent call last):
+TypeError: text must be a string
 
-	>>> string = ""
-	>>> text_indent(string)
+>>> string = ""
+>>> text_indent(string)
 
-	>>> string = 2
-	>>> text_indent(string)
-	Traceback (most recent call last):
-	TypeError: text must be a string
+>>> string = 2
+>>> text_indent(string)
+Traceback (most recent call last):
+TypeError: text must be a string
 
-	>>> string = "string"
-	>>> text_indent()
-	Traceback (most recent call last):
-	TypeError: text_indentation() missing 1 required positional argument: 'text'
+>>> string = "string"
+>>> text_indent()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
 
-	>>> text_indent(string, 2)
-	Traceback (most recent call last):
-	TypeError: text_indentation() takes 1 positional argument but 2 were given
+>>> text_indent(string, 2)
+Traceback (most recent call last):
+TypeError: text_indentation() takes 1 positional argument but 2 were given
 
-	>>> text_indent(" ")
-	 
+>>> text_indent(" ")
