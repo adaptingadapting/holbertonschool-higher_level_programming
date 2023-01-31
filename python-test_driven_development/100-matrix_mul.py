@@ -37,7 +37,7 @@ def matrix_mul(m_a, m_b):
     new_row = []
 
     for i in range(len(m_a)):
-        for k in range(len(m_b)):
+        for k in range(len(m_a)):
             for j in range(len(m_a[i])):
                 if len(m_a[i]) > len(m_b[0]):
                     raise ValueError("m_a and m_b can't be multiplied")
