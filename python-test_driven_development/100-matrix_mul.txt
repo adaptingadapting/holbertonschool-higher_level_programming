@@ -1,0 +1,30 @@
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+>>> matrix = "string"
+>>> matrix_mul(matrix)
+Traceback (most recent call last):
+TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
+
+>>> m2 = [[1, 2], [1, 2]]
+>>> matrix_mul(m2, matrix)
+Traceback (most recent call last):
+TypeError: m_b must be a list
+
+>>> matrix_mul(m2, m2)
+[[3, 6], [3, 6]]
+
+>>> matrix_mul(m2, None)
+Traceback (most recent call last):
+TypeError: m_b must be a list
+
+>>> matrix_mul()
+Traceback (most recent call last):
+TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+>>> matrix_mul(m2, m2, m2)
+Traceback (most recent call last):
+TypeError: matrix_mul() takes 2 positional arguments but 3 were given
+
+>>> m2 = [[1, 2], [1, 2j]]
+>>> matrix_mul(m2, m2)
+Traceback (most recent call last):
+TypeError: m_a should contain only integers or floats
