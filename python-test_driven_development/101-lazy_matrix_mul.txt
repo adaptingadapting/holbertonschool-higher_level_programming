@@ -1,0 +1,85 @@
+>>> matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+>>> matrix = "string"
+>>> matrix_mul(matrix)
+Traceback (most recent call last):
+TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+
+>>> m2 = [[1, 2], [1, 2, 3]]
+>>> m1 = [[1, 3, 4], [1, 2, 3]]
+>>> print(matrix_mul(m1, m2))
+Traceback (most recent call last):
+TypeError: each row of m_b must be equal in size
+
+>>> m1 = [[1, 2], [1, 2, 3]]
+>>> m2 = [[1, 3, 4], [1, 2, 3]]
+>>> print(matrix_mul(m1, m2))
+Traceback (most recent call last):
+TypeError: each row of m_a must be equal in size
+
+>>> m2 = [[1, 2], [1, 2]]
+>>> matrix_mul(m2, matrix)
+Traceback (most recent call last):
+TypeError: m_b is not list
+
+>>> m1 = [[1, 2], [1, 2]]
+>>> matrix_mul(matrix, m1)
+Traceback (most recent call last):
+TypeError: m_a is not list
+
+>>> matrix_mul(m2, m2)
+array([[3, 6],
+       [3, 6]])
+
+>>> matrix_mul(m2, None)
+Traceback (most recent call last):
+TypeError: m_b is not list
+
+>>> matrix_mul()
+Traceback (most recent call last):
+TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+>>> matrix_mul(m2, m2, m2)
+Traceback (most recent call last):
+TypeError: lazy_matrix_mul() takes 2 positional arguments but 3 were given
+
+>>> m2 = [[1, 2], [1, 2j]]
+>>> matrix_mul(m2, m2)
+Traceback (most recent call last):
+TypeError: m_a has to contain only integers or floats
+
+>>> m1 = [[1, 2], [1, 2j]]
+>>> m_b = [[5, 6, 1], [7, 8, 2]]
+>>> matrix_mul(m_b, m1)
+Traceback (most recent call last):
+TypeError: m_b has to contain only integers or floats
+
+>>> m_a = [[1, 2, 3], [3, 4, 5]]
+>>> m_b = [[1, 2], [3, 4]]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+ValueError: m_a and m_b cant multiply
+ 
+>>> m_a = [[]]
+>>> m_b = [[5, 6, 1], [7, 8, 2]]
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+ValueError: m_a cant be empty
+
+>>> m_b = [[]]
+>>> m_a = [[5, 6, 1], [7, 8, 2]]
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+ValueError: m_b cant be empty
+
+>>> m_a = []
+>>> m_b = [[5, 6, 1], [7, 8, 2]]
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+TypeError: m_a is not a list of lists
+
+>>> m_a = [[5, 6, 1], [7, 8, 2]]
+>>> m_b = []
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+TypeError: m_b is not a list of lists
