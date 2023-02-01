@@ -59,6 +59,35 @@ def queen_in_vert(matrix, N, pos_y):
 
 #################################################################
 
+def board_reset(matrix):
+
+    """ resets a matrix to 0 """
+
+    new_matrix = []
+    new_matrix_row = []
+
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            new_matrix_row.append(0)
+        new_matrix.append(new_matrix_row)
+        new_matrix_row = []
+    return new_matrix
+
+#################################################################
+
+def board_to_answer(matrix):
+
+    """ returns the answer matrix based off of the board matrix """
+
+    solution_matrix = []
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            if matrix[i][j] == 1:
+                solution_matrix.append([i, j])
+    return solution_matrix
+
+###############################################################
+
 if __name__ == "__main__":
 
     import sys
@@ -67,31 +96,33 @@ if __name__ == "__main__":
         print("Usage: nqueens N")
         exit(1)
 
-    N = int(sys.argv[1]) + 1
+    N = int(sys.argv[1])
 
-    if N <= 4:
+    if N < 4:
         print("N must be at least 4")
         exit(1)
 
     board = []
     board_row = []
+    
     for i in range(N):
         for j in range (N):
             board_row.append(0)
         board.append(board_row)
         board_row = []
 
-    print(board)
-    
-    possible_answer = []
-    possible_answer_row = []
-    queens_in_answer = 0
+    queens = 0
 
-    for iters in range(int(len(board) / 2) + 1):
-        for i in range(iters, len(board)):
+    for starting_positions in range(N):
+        board[0][starting_positions] = 1
+        for i in range(len(board)):
             for j in range(len(board[i])):
                 if (queen_in_diag(board, N, i, j) == 0 and
                     queen_in_vert(board, N, j) == 0 and
                     queen_in_row(board, i) == 0):
-                    print(queen)
-        
+                    board[i][j] = 1
+                    queens += 1
+
+        print(board_to_answer(board))
+        board = board_reset(board)
+        queens = 0
