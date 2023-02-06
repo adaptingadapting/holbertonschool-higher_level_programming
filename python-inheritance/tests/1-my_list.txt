@@ -1,0 +1,13 @@
+>>> func = __import__("1-my_list").MyList
+>>> func([])
+[]
+>>> func()
+[]
+>>> func(1)
+Traceback (most recent call last):
+TypeError: 'int' object is not iterable
+>>> func("hola")
+['h', 'o', 'l', 'a']
+>>> func(None)
+Traceback (most recent call last):
+TypeError: 'NoneType' object is not iterable
