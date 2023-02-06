@@ -1,0 +1,1 @@
+readme file for the python everything is object deirectoy
