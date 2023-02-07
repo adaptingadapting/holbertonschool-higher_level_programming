@@ -14,6 +14,26 @@ ValueError: john must be greater than 0
 Traceback (most recent call last):
 TypeError: john must be an integer
 
+>>> obj.integer_validator("john", {4, 2})
+Traceback (most recent call last):
+TypeError: john must be an integer
+
+>>> obj.integer_validator("john", "string")
+Traceback (most recent call last):
+TypeError: john must be an integer
+
+>>> obj.integer_validator("john", (4,))
+Traceback (most recent call last):
+TypeError: john must be an integer
+
+>>> obj.integer_validator("john", [4])
+Traceback (most recent call last):
+TypeError: john must be an integer
+
+>>> obj.integer_validator("john", True)
+Traceback (most recent call last):
+TypeError: john must be an integer
+
 >>> obj.integer_validator(None, 3)
 
 >>> obj.integer_validator(None, -3)
