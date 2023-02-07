@@ -1,0 +1,29 @@
+>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+>>> obj = BaseGeometry()
+>>> obj.integer_validator("john", 2)
+
+>>> obj.integer_validator("john", -2)
+Traceback (most recent call last):
+ValueError: john must be greater than 0
+
+>>> obj.integer_validator("john", 0)
+Traceback (most recent call last):
+ValueError: john must be greater than 0
+
+>>> obj.integer_validator("john", None)
+Traceback (most recent call last):
+TypeError: john must be an integer
+
+>>> obj.integer_validator(None, 3)
+
+>>> obj.integer_validator(None, -3)
+Traceback (most recent call last):
+ValueError: None must be greater than 0
+
+>>> obj.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+
+>>> obj.integer_validator()
+Traceback (most recent call last):
+TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
