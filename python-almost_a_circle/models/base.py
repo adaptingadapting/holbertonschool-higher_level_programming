@@ -14,6 +14,7 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @classmethod
     def to_json_string(list_dictionaries):
 
         import json
@@ -22,6 +23,7 @@ class Base:
             return "[]"
         return json.dumps(list_dictionaries)
 
+    @staticmethod
     def from_json_string(json_string):
 
         import json
@@ -29,3 +31,9 @@ class Base:
         if type(json_string) is None or len(json_string) == 0:
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        new = cls(1, 1)
+        new.update(**dictionary)
+        return new
