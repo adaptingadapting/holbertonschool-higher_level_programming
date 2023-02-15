@@ -9,6 +9,8 @@ class Rectangle(Base):
     """ defines a rectangle class """
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """ initiaties the instance """
+
         self.width = width
         self.height = height
         self.x = x
@@ -33,6 +35,8 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
+        """ width setter """
+
         if not type(value) is int:
             raise TypeError("width must be an integer")
         if not value > 0:
@@ -41,6 +45,8 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
+        """ height setter """
+
         if not type(value) is int:
             raise TypeError("height must be an integer")
         if not value > 0:
@@ -49,6 +55,8 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
+        """ x getter """
+
         if not type(value) is int:
             raise TypeError("x must be an integer")
         if not value >= 0:
@@ -57,6 +65,8 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
+        """ y setter """
+
         if not type(value) is int:
             raise TypeError("y must be an integer")
         if not value >= 0:
@@ -64,9 +74,13 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """ area function """
+
         return self.__height * self.__width
 
     def display(self):
+        """ display function """
+
         for k in range(self.__y):
             print()
         for i in range(self.__height):
@@ -78,10 +92,14 @@ class Rectangle(Base):
                 print()
 
     def __str__(self):
+        """ str method """
+
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y}\
  - {self.__width}/{self.__height}"
 
     def update(self, *args, **kwargs):
+        """ update method """
+
         if args and len(args) != 0:
             i = 0
             for arg in args:
@@ -110,5 +128,7 @@ class Rectangle(Base):
                     self.__y = value
 
     def to_dictionary(self):
+        """ to dict method """
+
         return dict(x=self.x, y=self.y, id=self.id, height=self.height,
                     width=self.width)
