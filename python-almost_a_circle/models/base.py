@@ -38,8 +38,8 @@ class Base:
                 list_dicts = [o.to_dictionary() for o in list_objs]
                 jsonfile.write(Base.to_json_string(list_dicts))
 
-                @staticmethod
-    def rom_json_string(json_string):
+    @staticmethod
+    def from_json_string(json_string):
         """ documentation """
 
         import json
